@@ -45,8 +45,8 @@ angular.module('starter.controllers', [])
   };
 
   $scope.calculateBMI = function() {
-    if $scope.data.toggle === true {
-      $scope.data.height = $scope.data.heightft * 12 + $scope.data.heightin
+    if ( $scope.data.toggle === true ) {
+      $scope.data.height = $scope.data.heightft * 12 + $scope.data.heightin;
     }
     var person = new Person({
       toggle: $scope.data.toggle,
