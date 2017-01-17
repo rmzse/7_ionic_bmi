@@ -2,14 +2,28 @@
   <ion-content>
     <div class="row">
       <div class="col">
-        <label class="item item-input">
-          <input type="number" class="item item-input" placeholder="Weight" ng-model="data.weight">
-        </label>
-        <label class="item item-input">
-          <input type="number" class="item item-input" placeholder="Height" ng-model="data.height">
-        </label>
-        <button class="button button-full button-calm" ng-click="calculateBMI()">Calculate</button>
-        <div class="card" ng-if="person">
+        <p>Check your obesity level and figure out whether you are in the normal weight range. Calculate your body mass index value (BMI value).</p>
+        <ion-toggle data-ng-model="data.toggle" data-ng-change="updateToggleValues()">Use imperial measurement units</ion-toggle>
+        <div class="inputs">
+          <label class="item item-input">
+            <input type="number" class="item item-input" placeholder="{{placeholder.weight}}" data-ng-model="data.weight">
+          </label>
+          <div class="inputs animate-if" data-ng-if="!data.toggle">
+              <label class="item item-input">
+                <input type="number" class="item item-input" placeholder="{{placeholder.height}}" data-ng-model="data.height">
+              </label>
+          </div>
+          <div class="inputs animate-if" data-ng-if="data.toggle">
+            <label class="item item-input">
+              <input type="number" class="item item-input" placeholder="{{placeholder.heightft}}" data-ng-model="data.heightft">
+            </label>
+            <label class="item item-input">
+              <input type="number" class="item item-input" placeholder="{{placeholder.heightin}}" data-ng-model="data.heightin">
+            </label>
+          </div>
+          <button class="button button-full button-calm" ng-click="calculateBMI()">Calculate</button>
+        </div>
+        <div class="card" data-ng-if="person">
           <div class="item item-divider">
             BMI Calculation
           </div>
