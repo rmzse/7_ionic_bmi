@@ -9,7 +9,16 @@
           <input type="number" class="item item-input" placeholder="Height" ng-model="data.height">
         </label>
         <button class="button button-full button-calm" ng-click="calculateBMI()">Calculate</button>
-      </div>
+        <div class="card" ng-if="person">
+          <div class="item item-divider">
+            BMI Calculation
+          </div>
+          <div class="item item-text-wrap">
+            <p>Person: Weight {{person.weight}}, Height {{person.height}}</p>
+            <p>BMI: {{person.bmiValue}}</p>
+            <p><strong>You are {{person.bmiMessage}}</strong></p>
+          </div>
+        </div>
       </div>
     </div>
   </ion-content>
