@@ -2,7 +2,14 @@
   <ion-content>
     <div class="row">
       <div class="col">
-
+        <label class="item item-input">
+          <input type="number" class="item item-input" placeholder="Weight" ng-model="data.weight">
+        </label>
+        <label class="item item-input">
+          <input type="number" class="item item-input" placeholder="Height" ng-model="data.height">
+        </label>
+        <button class="button button-full button-calm" ng-click="calculateBMI()">Calculate</button>
+      </div>
       </div>
     </div>
   </ion-content>
