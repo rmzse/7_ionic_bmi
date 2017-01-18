@@ -5,15 +5,18 @@
         <p>Check your obesity level and figure out whether you are in the normal weight range. Calculate your body mass index value (BMI value).</p>
         <ion-toggle data-ng-model="data.toggle" data-ng-change="updateToggleValues()">Use imperial measurement units</ion-toggle>
         <div class="inputs">
-          <label class="item item-input">
-            <input type="number" class="item item-input" placeholder="{{placeholder.weight}}" data-ng-model="data.weight">
-          </label>
-          <div class="inputs animate-if" data-ng-if="!data.toggle">
+          <div class="inputs animate-if" data-ng-if=!data.toggle>
+              <label class="item item-input">
+                <input type="number" class="item item-input" placeholder="{{placeholder.weight}}" data-ng-model="data.weight">
+              </label>
               <label class="item item-input">
                 <input type="number" class="item item-input" placeholder="{{placeholder.height}}" data-ng-model="data.height">
               </label>
           </div>
           <div class="inputs animate-if" data-ng-if="data.toggle">
+            <label class="item item-input">
+              <input type="number" class="item item-input" placeholder="{{placeholder.weightlb}}" data-ng-model="data.weightlb">
+            </label>
             <label class="item item-input">
               <input type="number" class="item item-input" placeholder="{{placeholder.heightft}}" data-ng-model="data.heightft">
             </label>
@@ -28,7 +31,7 @@
             BMI Calculation
           </div>
           <div class="item item-text-wrap">
-            <p>Person: Weight {{person.weight}}, Height {{person.height}}</p>
+            <p>Person: Weight {{person.weight}} {{presunits.weight}}, Height {{person.height}} {{presunits.height}}</p>
             <p>BMI: {{person.bmiValue}}</p>
             <p><strong>You are {{person.bmiMessage}}</strong></p>
           </div>
