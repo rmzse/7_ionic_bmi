@@ -5,7 +5,7 @@
         <p>Check your obesity level and figure out whether you are in the normal weight range. Calculate your body mass index value (BMI value).</p>
         <ion-toggle data-ng-model="data.toggle" data-ng-change="updateToggleValues()">Use imperial measurement units</ion-toggle>
         <div class="inputs">
-          <div class="inputs animate-if" data-ng-if=!data.toggle>
+          <div class="inputs animate-if" data-ng-if="!data.toggle">
               <label class="item item-input">
                 <input type="number" class="item item-input" placeholder="{{placeholder.weight}}" data-ng-model="data.weight">
               </label>

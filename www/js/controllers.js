@@ -9,6 +9,7 @@ angular.module('starter.controllers', [])
 
     $scope.data.toggle = false;
 
+
     $scope.$on("$ionicView.loaded", function(){ // onLoad of the view, initiate the placeholder values
       $scope.setMeasurementUnit();
     });
